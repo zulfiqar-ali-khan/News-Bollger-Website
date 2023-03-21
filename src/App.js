@@ -5,10 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import "./assets/css/style.css";
 //
 import { Routes, Route } from "react-router-dom";
+import lazyLoad from './utils/lazy-loading'
 
 // Pages
-import Home from './pages/Home';
-import Layout from './components/Layout';
+const Home = lazyLoad(() => import('./pages/Home'))
+const Detail = lazyLoad(() => import('./pages/Detail'))
+const Layout = lazyLoad(() => import('./components/layout'))
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/detail" element={<Detail />} />
       </Routes>
     </Layout>
 
@@ -24,39 +27,3 @@ function App() {
 }
 
 export default App;
-
-
-// var settings = {
-//   dots: true,
-//   infinite: false,
-//   speed: 500,
-//   slidesToShow: 4,
-//   slidesToScroll: 4,
-//   initialSlide: 0,
-//   responsive: [
-//     {
-//       breakpoint: 1024,
-//       settings: {
-//         slidesToShow: 3,
-//         slidesToScroll: 3,
-//         infinite: true,
-//         dots: true
-//       }
-//     },
-//     {
-//       breakpoint: 767,
-//       settings: {
-//         slidesToShow: 1,
-//         slidesToScroll: 1,
-//         initialSlide: 1
-//       }
-//     },
-//     {
-//       breakpoint: 480,
-//       settings: {
-//         slidesToShow: 1,
-//         slidesToScroll: 1
-//       }
-//     }
-//   ]
-// };

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar, Nav, Image, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { LOGO } from '../constants'
+import { LOGO } from '../../constants'
 const Header = () => {
     return (
         <Row className=' blurbgwhite navbarheader'>
@@ -14,9 +14,10 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
                             <Link to="/" className='nav-link'>Home</Link>
-                            <Link to="/home" className='nav-link'>BBC News</Link>
+                            <Link to="/detail" className='nav-link'>BBC News</Link>
                             <Link to="/home" className='nav-link'>New York Times</Link>
                             <Link to="/home" className='nav-link'>NewsCred</Link>
+                            <Link to="/home" className='nav-link'>Login</Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
