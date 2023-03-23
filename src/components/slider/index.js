@@ -1,8 +1,11 @@
+import moment from 'moment';
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import ImageComponent from './../image'
 
 const SliderComponent = ({ data = [], show = 4 }) => {
+    const history = useNavigate();
     var settings = {
         dots: false,
         infinite: false,
@@ -46,11 +49,11 @@ const SliderComponent = ({ data = [], show = 4 }) => {
                         <div className="item px-2" key={i}>
                             <div className="fh5co_hover_news_img">
                                 <div className="fh5co_news_img">
-                                    <ImageComponent image={item.image} />
+                                    <ImageComponent image={item?.urlToImage} />
                                 </div>
                                 <div>
-                                    <a href="single.html" className="d-block fh5co_small_post_heading"><span className="">{item.text}</span></a>
-                                    <div className="c_g">{item.date}</div>
+                                    <a onClick={() => history('/detail', { state: { article: item } })} className="d-block fh5co_small_post_heading"><span className="">{item?.title}</span></a>
+                                    <div className="c_g"> {moment(item?.publishedAt).format("MMM Do YY")}</div>
                                 </div>
                             </div>
                         </div>
@@ -61,12 +64,12 @@ const SliderComponent = ({ data = [], show = 4 }) => {
                         <div className="item px-2" key={i}>
                             <div className="fh5co_latest_trading_img_position_relative">
                                 <div className="fh5co_latest_trading_img">
-                                    <ImageComponent image={item.image} />
+                                    <ImageComponent image={item?.urlToImage} />
                                 </div>
                                 <div className="fh5co_latest_trading_img_position_absolute"></div>
                                 <div className="fh5co_latest_trading_img_position_absolute_1">
-                                    <a href="single.html" className="text-white"> {item.text} </a>
-                                    <div className="fh5co_latest_trading_date_and_name_color"> Walter Johson - {item.date}</div>
+                                    <a onClick={() => history('/detail', { state: { article: item } })} className="text-white"> {item?.title} </a>
+                                    <div className="fh5co_latest_trading_date_and_name_color"> {item?.author} - {moment(item?.publishedAt).format("MMM Do YY")}</div>
                                 </div>
                             </div>
                         </div>

@@ -14,10 +14,10 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
                             <Link to="/" className='nav-link'>Home</Link>
-                            <Link to="/detail" className='nav-link'>BBC News</Link>
-                            <Link to="/home" className='nav-link'>New York Times</Link>
-                            <Link to="/home" className='nav-link'>NewsCred</Link>
-                            <Link to="/home" className='nav-link'>Login</Link>
+                            <Link to="/bbc" className='nav-link'>BBC News</Link>
+                            <Link to="/nyt" className='nav-link'>New York Times</Link>
+                            <Link to="/newscred" className='nav-link'>NewsCred</Link>
+                            <Link to="/login" className='nav-link'>Login</Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

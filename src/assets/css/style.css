@@ -10,13 +10,15 @@ p {
     /* text-align: justify; */
 }
 
-a,
 a:hover {
-    color: #003855
+    color: #003855 !important;
+    transform: scale(1.05);
 }
 
 a {
     text-decoration: none;
+    cursor: pointer;
+    transition: linear 0.1s;
 }
 
 .lightbg {
@@ -276,7 +278,6 @@ a {
     color: #fff;
     z-index: 7;
     top: 65%;
-    left: 5%;
     padding: 0 10px
 }
 
