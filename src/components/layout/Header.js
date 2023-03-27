@@ -1,8 +1,15 @@
 import React from 'react'
 import { Navbar, Nav, Image, Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { LOGO } from '../../constants'
+
 const Header = () => {
+    const auth = localStorage.getItem('user');
+    const history = useNavigate();
+    const handleLogout = () => {
+        localStorage.clear();
+        history('/');
+    }
     return (
         <Row className=' blurbgwhite navbarheader'>
             <Col md={10} className="mx-auto">
@@ -13,11 +20,12 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                            <Link to="/" className='nav-link'>Home</Link>
-                            <Link to="/bbc" className='nav-link'>BBC News</Link>
-                            <Link to="/nyt" className='nav-link'>New York Times</Link>
+                            <Link to="/home" className='nav-link'>Home</Link>
                             <Link to="/newscred" className='nav-link'>NewsCred</Link>
-                            <Link to="/login" className='nav-link'>Login</Link>
+                            {auth ? <>
+                                <Link to="/newsfeed" className='nav-link'>News Feed</Link>
+                                <button className='nav-link' onClick={handleLogout}>Logout</button>
+                            </> : <Link to="/" className='nav-link'>Login</Link>}
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

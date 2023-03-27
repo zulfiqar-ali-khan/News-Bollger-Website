@@ -25,7 +25,7 @@ const HomeTopSection = ({ TopHeadline }) => {
             <Col md={6} className="p-0">
                 <Row>
                     {TopHeadline?.map((item, i) => {
-                        if (item?.urlToImage != null && i <= 6 && i != 0) {
+                        if (item?.urlToImage != null && i <= 4 && i != 0) {
                             return <Col md={6} className="p-0">
                                 <div className="fh5co_suceefh5co_height_2" >
                                     <ImageConponent image={item?.urlToImage} />

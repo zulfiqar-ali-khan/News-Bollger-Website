@@ -14,7 +14,7 @@ const Detail = () => {
             <Row>
                 <Col md={10} className="mx-auto">
                     <Row>
-                        <Col md={8} className="py-5 px-4">
+                        <Col md={10} className="py-5 px-4 mx-auto">
 
                             <h3>
                                 {article?.title}
@@ -28,10 +28,10 @@ const Detail = () => {
 
 
                         </Col>
-                        <Col md={3} className="py-5 px-4">
+                        {/* <Col md={3} className="py-5 px-4">
                             <h2 className="tags">Tags</h2>
                             <Tags />
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Col>
             </Row>

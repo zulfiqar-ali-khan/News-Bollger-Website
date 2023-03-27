@@ -1,21 +1,19 @@
 import React from 'react'
 
-const Tags = () => {
+const Tags = ({ setType }) => {
     return (
 
         <div className="fh5co_tags_all">
-            <a href="#" className="fh5co_tagg">Business</a>
-            <a href="#" className="fh5co_tagg">Technology</a>
-            <a href="#" className="fh5co_tagg">Sport</a>
-            <a href="#" className="fh5co_tagg">Art</a>
-            <a href="#" className="fh5co_tagg">Lifestyle</a>
-            <a href="#" className="fh5co_tagg">Three</a>
-            <a href="#" className="fh5co_tagg">Photography</a>
-            <a href="#" className="fh5co_tagg">Lifestyle</a>
-            <a href="#" className="fh5co_tagg">Art</a>
-            <a href="#" className="fh5co_tagg">Education</a>
-            <a href="#" className="fh5co_tagg">Social</a>
-            <a href="#" className="fh5co_tagg">Three</a>
+            <a className="fh5co_tagg" onClick={() => setType('Business')}>Business</a>
+            <a className="fh5co_tagg" onClick={() => setType('Technology')}>Technology</a>
+            <a className="fh5co_tagg" onClick={() => setType('Sport')}>Sport</a>
+            <a className="fh5co_tagg" onClick={() => setType('Art')}>Art</a>
+            <a className="fh5co_tagg" onClick={() => setType('Lifestyle')}>Lifestyle</a>
+            <a className="fh5co_tagg" onClick={() => setType('Three')}>Three</a>
+            <a className="fh5co_tagg" onClick={() => setType('Photography')}>Photography</a>
+            <a className="fh5co_tagg" onClick={() => setType('Lifestyle')}>Lifestyle</a>
+            <a className="fh5co_tagg" onClick={() => setType('Education')}>Education</a>
+            <a className="fh5co_tagg" onClick={() => setType('Social')}>Social</a>
         </div>
 
     )

@@ -1,10 +1,11 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 import NewsListCard from '../card/NewsListCard'
-import Pagenation from '../Pagination'
-import Tags from '../tag'
+import Popular from '../mostpopular'
 
-const NewsList = ({ news }) => {
+const NewsList = ({ news, most = [] }) => {
+    const history = useNavigate();
     return (
         <Row>
             <Col md={10} className="mx-auto">
@@ -21,14 +22,18 @@ const NewsList = ({ news }) => {
                         </Col>
 
                         <Col md={3}>
-                            <h2>Tags</h2>
-                            <Tags />
+                            <h2>Most Popular</h2>
+                            {most.map((article, i) => {
+                                if (i <= 8) {
+                                    return <Popular key={i} article={article} />
+                                }
+                            })}
                         </Col>
                     </Row>
 
                     <Row className="animate-box">
                         <Col className="text-center pb-4 pt-4">
-                            <a href="#" className="btn_mange_pagging">View More ... </a>
+                            <a onClick={() => history('/newscred')} className="btn_mange_pagging">View More ... </a>
                         </Col>
                     </Row>
 
